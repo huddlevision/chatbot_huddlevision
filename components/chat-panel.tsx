@@ -14,6 +14,7 @@ import { ExternalLink } from '@/components/external-link';
 import { IconOpenAI, IconUser } from '@/components/ui/icons';
 import { AnimatedBeam } from './magicui/animated-beam';
 import { cn } from "@/lib/utils";
+import { ShineBorder } from '@/components/magicui/shine-border';
 
 
 export interface ChatPanelProps {
