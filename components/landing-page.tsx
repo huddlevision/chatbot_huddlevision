@@ -11,12 +11,14 @@ import { BorderBeam } from "@/components/magicui/border-beam";
 import { motion, useInView } from "framer-motion";
 import { ChevronRight } from "lucide-react";
 import { useRef } from "react";
+import { useRouter } from "next/router";
 
 export function LandingPage() {
   const fadeInRef = useRef(null);
   const fadeInInView = useInView(fadeInRef, {
     once: true,
   });
+
 
   const fadeUpVariants = {
     initial: {
@@ -35,7 +37,7 @@ export function LandingPage() {
         <div className="container z-10 flex flex-col">
           <div className="mt-5 grid grid-cols-1">
             <div className="flex flex-col items-center gap-1 pb-8 text-center">
-            <div className="flex min-h-[2rem] mb-4 items-center justify-center">
+            <a href="/beta" className="flex min-h-[2rem] mb-4 items-center justify-center hover:cursor-pointer">
                 <AnimatedGradientText>
                 🏈 <hr className="mx-2 h-4 w-[1px] shrink-0 bg-gray-300" />{" "}
                   <span
@@ -47,7 +49,7 @@ export function LandingPage() {
                   </span>
                   <ChevronRight className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
                 </AnimatedGradientText>
-              </div>
+            </a>
               <motion.h1
                 ref={fadeInRef}
                 className="text-balance bg-gradient-to-br from-black from-30% to-black/60 bg-clip-text py-3 text-3xl font-medium leading-none tracking-tighter text-transparent dark:from-white dark:to-white/40 sm:text-3xl md:text-3xl lg:text-3xl"
