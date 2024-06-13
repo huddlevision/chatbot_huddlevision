@@ -49,6 +49,8 @@ const Circle = React.forwardRef<
   );
 });
 
+Circle.displayName = "Circle";
+
 export function AnimatedBeamDemo() {
   const containerRef = React.useRef<HTMLDivElement>(null);
   const div1Ref = React.useRef<HTMLDivElement>(null);
@@ -90,6 +92,8 @@ export function AnimatedBeamDemo() {
     </div>
   );
 }
+
+AnimatedBeamDemo.displayName = "AnimatedBeamDemo";
 
 const Icons = {
   openai: () => (
@@ -293,7 +297,7 @@ export function ChatPanel({
                 from-black from-30% 
                 to-black/60 bg-clip-text py-3 text-3xl font-medium leading-none tracking-tighter text-transparent sm:text-3xl md:text-3xl lg:text-3xl">LLMs connected to sports databases</p>
                 </div>
-                <p className="text-md text-left text-gray-600">We give LLMs access to sports databases, allowing you to query with natural language and get back advanced analytics. We currently support the OpenAI GPT-4 and GPT-4o as a model provider, with upcoming support for Anthropic's Claude, Llama-3, and more.</p>
+                <p className="text-md text-left text-gray-600">We give LLMs access to sports databases, allowing you to query with natural language and get back advanced analytics. We currently support the OpenAI GPT-4 and GPT-4o as a model provider, with upcoming support for Anthropic&apos;s Claude, Llama-3, and more.</p>
                 </div>
                 <div className="w-full sm:w-1/2 ml-3">  
                   <AnimatedBeamDemo /> 
