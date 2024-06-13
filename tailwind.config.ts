@@ -19,7 +19,8 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ['var(--font-geist-sans)'],
-        mono: ['var(--font-geist-mono)']
+        mono: ['var(--font-geist-mono)'],
+        serif: ['Press Start 2P, sans-serif']
       },
       colors: {
         border: 'hsl(var(--border))',

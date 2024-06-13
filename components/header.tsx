@@ -17,6 +17,7 @@ import { ChatHistory } from './chat-history'
 import { Session } from '@/lib/types'
 import { ExternalLink } from '@/components/external-link'
 import img from "@/public/logo.svg";
+import '@fontsource-variable/space-grotesk';
 
 import { Popover, PopoverButton, PopoverPanel, Transition } from '@headlessui/react'
 
@@ -71,8 +72,10 @@ async function UserOrLogin() {
         <Button variant="link" asChild className="-ml-2 text-md text-zinc-900/[0.8]">
             
         </Button>
-        <Button variant="link" asChild className="-mr-1 text-lg text-zinc-900/[0.8]">
-            <Link href="/new">Huddlechat</Link>
+        <Button variant="link" asChild className="-mr-1 text-zinc-900/[0.8]">
+            <Link  href="/new">
+              <span className="text-balance bg-gradient-to-br from-sky-600 from-30% to-sky-800/60 bg-clip-text py-3 text-2xl font-medium leading-none tracking-tighter text-transparent sm:text-2xl md:text-2xl lg:text-2xl">Huddlechat</span>
+            </Link>
         </Button>
         <IconSeparator className="size-8 text-muted-foreground/[0.30]" />
         <Example/>

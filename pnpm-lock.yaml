@@ -11,6 +11,18 @@ importers:
       '@ai-sdk/openai':
         specifier: ^0.0.9
         version: 0.0.9(zod@3.23.8)
+      '@fontsource-variable/saira':
+        specifier: ^5.0.29
+        version: 5.0.29
+      '@fontsource-variable/space-grotesk':
+        specifier: ^5.0.18
+        version: 5.0.18
+      '@fontsource/orbitron':
+        specifier: ^5.0.19
+        version: 5.0.19
+      '@fontsource/press-start-2p':
+        specifier: ^5.0.20
+        version: 5.0.20
       '@headlessui/react':
         specifier: ^2.0.4
         version: 2.0.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -351,6 +363,18 @@ packages:
 
   '@floating-ui/utils@0.2.2':
     resolution: {integrity: sha512-J4yDIIthosAsRZ5CPYP/jQvUAQtlZTTD/4suA08/FEnlxqW3sKS9iAhgsa9VYLZ6vDHn/ixJgIqRQPotoBjxIw==}
+
+  '@fontsource-variable/saira@5.0.29':
+    resolution: {integrity: sha512-eLJ01MCOn7bux+4dYGVs58XcxQbWt7mI37ve44k7a18ALZleDw1qX2a7js43Jf1gUnJBnHkGhNzUtI4XPI+jpQ==}
+
+  '@fontsource-variable/space-grotesk@5.0.18':
+    resolution: {integrity: sha512-Z5uQmCjPdNobaFCtdA7aguerAQi4uvMRcUXhD+74N6Nq2Shxr0skvNzxB9mQVtkddGpB996RXipCDq9qzb525g==}
+
+  '@fontsource/orbitron@5.0.19':
+    resolution: {integrity: sha512-Lr/v3Zq/9Q7gAU+XFH9AEExqhCwTKYvJZsBN7wvVk1Tkl0M0fIbW7qh5Bk4b5rrTqT93hj+gsbd64NBdVTZKuw==}
+
+  '@fontsource/press-start-2p@5.0.20':
+    resolution: {integrity: sha512-URkenVoJlx1wtmpY+zoMFWxftWmm1H3CJnrGwjoy1e5G+qTjJnctxDIXDs65mvluFmSPsFNaULA2CEQBOli+eQ==}
 
   '@headlessui/react@2.0.4':
     resolution: {integrity: sha512-16d/rOLeYsFsmPlRmXGu8DCBzrWD0zV1Ccx3n73wN87yFu8Y9+X04zflv8EJEt9TAYRyLKOmQXUnOnqQl6NgpA==}
@@ -3445,6 +3469,14 @@ snapshots:
       tabbable: 6.2.0
 
   '@floating-ui/utils@0.2.2': {}
+
+  '@fontsource-variable/saira@5.0.29': {}
+
+  '@fontsource-variable/space-grotesk@5.0.18': {}
+
+  '@fontsource/orbitron@5.0.19': {}
+
+  '@fontsource/press-start-2p@5.0.20': {}
 
   '@headlessui/react@2.0.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
