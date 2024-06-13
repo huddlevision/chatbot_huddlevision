@@ -15,6 +15,7 @@ import { SidebarMobile } from './sidebar-mobile'
 import { SidebarToggle } from './sidebar-toggle'
 import { ChatHistory } from './chat-history'
 import { Session } from '@/lib/types'
+import { ExternalLink } from '@/components/external-link'
 import img from "@/public/logo.svg";
 
 import { Popover, PopoverButton, PopoverPanel, Transition } from '@headlessui/react'
@@ -38,8 +39,10 @@ function Example() {
             <p className="text-md text-sky-600">Huddlechat</p>
             <p className="text-sm text-muted-foreground">A natural language interface to sports stats.</p>
           </a>
-          <a className="mb-3 block rounded-md px-3 py-4 transition hover:bg-zinc-100/[0.55]" href="https://huddlevision.ai">
-            <p className="text-md text-sky-600">Huddlevision</p>
+          <a className="mb-3 block rounded-md px-3 py-4 transition hover:bg-zinc-100/[0.55]" target="_blank" href="https://huddlevision.ai">
+            <ExternalLink href="https://huddlevision.ai">
+              <span className="text-md text-sky-600">Huddlevision</span>
+            </ExternalLink>
             <p className="text-sm text-muted-foreground">Enterprise computer-vision solutions to high school football scouting.</p>
           </a>
           <a className="mb-3 block rounded-md px-3 py-4 transition hover:bg-zinc-100/[0.55]" href="/rag">
