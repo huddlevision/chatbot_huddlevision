@@ -102,9 +102,7 @@ export function Footer() {
         <div className="gap-4 p-4 py-16 sm:pb-16 md:flex md:justify-between">
           <div className="mb-12 flex flex-col gap-4">
             <a href="/" className="flex items-center gap-2">
-              <span className="text-xl ml-3 font-bold text-neutral-900 dark:text-white">
-                Huddlechat
-              </span>
+            <span className="text-balance bg-gradient-to-tr from-sky-950 from-25% to-sky-300/[0.8] bg-clip-text py-3 text-2xl font-medium leading-none tracking-tighter text-transparent sm:text-2xl md:text-2xl lg:text-2xl">Huddlechat</span>
             </a>
             <div className="max-w-sm">
               <div className="z-10 mt-4 flex w-full flex-col items-start text-left">

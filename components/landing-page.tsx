@@ -41,9 +41,7 @@ export function LandingPage() {
                 <AnimatedGradientText>
                 🏈 <hr className="mx-2 h-4 w-[1px] shrink-0 bg-gray-300" />{" "}
                   <span
-                    className={cn(
-                      `inline animate-gradient bg-gradient-to-r from-[#5783fc] via-[#9c40ff] to-[#008cff] bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent`,
-                    )}
+                  className="text-sky-950"
                   >
                     Sign up for the beta
                   </span>
@@ -52,7 +50,7 @@ export function LandingPage() {
             </a>
               <motion.h1
                 ref={fadeInRef}
-                className="text-balance bg-gradient-to-br from-black from-30% to-black/60 bg-clip-text py-3 text-3xl font-medium leading-none tracking-tighter text-transparent dark:from-white dark:to-white/40 sm:text-3xl md:text-3xl lg:text-3xl"
+                className="text-balance bg-gradient-to-br from-sky-950 from-30% to-sky-300 bg-clip-text py-3 text-3xl font-medium leading-none tracking-tighter text-transparent dark:from-white dark:to-white/40 sm:text-3xl md:text-3xl lg:text-3xl"
                 animate={fadeInInView ? "animate" : "initial"}
                 variants={fadeUpVariants}
                 initial={false}
@@ -103,7 +101,7 @@ export function LandingPage() {
               className={cn(
                 "absolute inset-0 bottom-1/2 h-full w-full transform-gpu [filter:blur(120px)]",
                 // light styles
-                "[background-image:linear-gradient(to_bottom,#0ea5e9,transparent_30%)]",
+                "[background-image:linear-gradient(to_bottom, --var(sky-blue-300),transparent_30%)]",
 
               )}
             />

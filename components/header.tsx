@@ -74,7 +74,7 @@ async function UserOrLogin() {
         </Button>
         <Button variant="link" asChild className="-mr-1 text-zinc-900/[0.8]">
             <Link  href="/new">
-              <span className="text-balance bg-gradient-to-br from-sky-600 from-30% to-sky-800/60 bg-clip-text py-3 text-2xl font-medium leading-none tracking-tighter text-transparent sm:text-2xl md:text-2xl lg:text-2xl">Huddlechat</span>
+              <span className="text-balance bg-gradient-to-tr from-sky-950 from-25% to-sky-300/[0.8] bg-clip-text py-3 text-2xl font-medium leading-none tracking-tighter text-transparent sm:text-2xl md:text-2xl lg:text-2xl">Huddlechat</span>
             </Link>
         </Button>
         <IconSeparator className="size-8 text-muted-foreground/[0.30]" />

@@ -228,14 +228,20 @@ export function ChatPanel({
                 }}
               >
                 <h3 className="text-sm font-semibold">{cached.heading}</h3>
-                <p className="text-sm text-sky-500">{cached.subheading}</p>
+                <p className="text-sm mt-1 bg-gradient-to-br 
+               leading-none tracking-tighter text-transparent
+                from-sky-700 from-20% 
+                to-sky-300 bg-clip-text">{cached.subheading}</p>
               </div>
             ))}
           </div>
           <div className="w-11/12 mx-auto text-left mt-20 sm:mt-40">
             <div className="flex flex-row">
-              <IconUser className="w-20 h-10 mr-3" />
-              <p className="text-xl sm:text-3xl">{"What is Dak Prescott's EPA per dropback when trailing by more than one possession in the 4th quarter in 2023?"}</p>
+              <IconUser opacity="0.8" className="w-20 h-10 mr-3" />
+              <p className="text-xl sm:text-3xl bg-gradient-to-br 
+              font-medium leading-none tracking-tighter text-transparent
+                from-black from-20% 
+                to-sky-300 bg-clip-text">{"What is Dak Prescott's EPA per dropback when trailing by more than one possession in the 4th quarter in 2023?"}</p>
             </div>  
               <div className="flex flex-col mb-5">
                 <div className="flex-col">
@@ -251,8 +257,8 @@ export function ChatPanel({
                         <p className="text-md text-gray-600 mb-1">Team: Dallas Cowboys</p>
                         <p className="text-md text-gray-600 mb-1">Position: QB</p>
                         <p className="text-md text-gray-600 mb-1">Height: {"6'2"}</p>
-                        <p className="text-md text-gray-600 mb-1">Weight: 210</p>
-                        <p className="text-md text-gray-600 mb-1">College: Mississipi State</p>
+                        <p className="text-md text-gray-600 mb-1">Weight: 229 lbs</p>
+                        <p className="text-md text-gray-600 mb-1">College: Mississippi State (2016, Round: 4 Pick: 135)</p>
                     </div>
                 </div>
                 </div>
@@ -290,11 +296,11 @@ export function ChatPanel({
                 <div className="flex flex-col sm:flex-row items-center">
                 <div className="flex flex-col w-full sm:w-1/2">
                 <div className="flex flex-row items-center mb-5 w-full">
-                <IconOpenAI className="w-10 h-10" />
+                <IconOpenAI opacity="0.8" className="w-10 h-10" />
                 <p className="ml-3 text-left text-balance 
                 bg-gradient-to-br 
                 from-black from-30% 
-                to-black/60 bg-clip-text py-3 text-3xl font-medium leading-none tracking-tighter text-transparent sm:text-3xl md:text-3xl lg:text-3xl">LLMs connected to sports databases</p>
+                to-sky-300 bg-clip-text py-3 text-3xl font-medium leading-none tracking-tighter text-transparent sm:text-3xl md:text-3xl lg:text-3xl">LLMs connected to sports databases</p>
                 </div>
                 <p className="text-md text-left text-gray-600">We give LLMs access to sports databases, allowing you to query with natural language and get back advanced analytics. We currently support the OpenAI GPT-4 and GPT-4o as a model provider, with upcoming support for Anthropic&apos;s Claude, Llama-3, and more.</p>
                 </div>
@@ -305,18 +311,18 @@ export function ChatPanel({
               </div>
           </div>
           <div className="inset-x-0 w-full pb-12 m-auto h-full relative text-center mt-20 sm:mt-40">
-            <div className="flex flex-col m-auto w-11/12 space-around mt-30 mb-20 mx-auto p-5">
+            <div className="flex flex-col m-auto w-11/12 space-around mt-30 mb-20 mx-auto">
                 {/* <p className="text-left text-balance mb-5 font-medium text-sky-600">SUPPORTED</p> */}
                 <div className="flex flex-col sm:flex-row justify-start mb-5">
                   <div className="flex-col p-5 border border-rounded w-full sm:w-1/3 rounded-md text-left  mb-3 sm:mb-0">
                   <div>
                   <div className="flex flex-row">
-                   <svg className="mb-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="rgb(14, 165, 233)" fill="none">
+                   <svg className="mb-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="black" fill="none">
                       <path d="M21.3006 6.05187C21.1484 5.22701 20.7411 4.45623 20.1372 3.85008C19.5309 3.24641 18.7599 2.83927 17.9348 2.68704C13.7379 1.98816 9.32857 3.26088 6.29895 6.28553C3.27 9.30951 1.9905 13.7155 2.68454 17.9122C2.83679 18.7371 3.24405 19.5079 3.84791 20.114C4.45425 20.7177 5.22527 21.1248 6.0504 21.2771C10.2213 22.0738 14.6996 20.7027 17.6917 17.6794C20.7496 14.6729 22.0291 10.2497 21.3006 6.05187Z" stroke="currentColor" stroke-width="1.5" />
                       <path d="M4 20L20 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                       <path d="M9 12L12 15M12 9L15 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                   </svg>
-                  <p className="ml-2 font-bold text-sky-500">IN BETA TESTING</p>
+                  <p className="ml-2 font-bold text-black">IN BETA TESTING</p>
                   </div>
                     <div className="mb-5">
                     <ExternalLink href="">
@@ -377,7 +383,7 @@ export function ChatPanel({
                 <p className="ml-3 text-left text-balance 
                 bg-gradient-to-br 
                 from-black from-30% 
-                to-black/60 bg-clip-text py-3 text-3xl font-medium leading-none tracking-tighter text-transparent sm:text-3xl md:text-3xl lg:text-3xl">Supported Databases</p>
+                to-sky-300 bg-clip-text py-3 text-3xl font-medium leading-none tracking-tighter text-transparent sm:text-3xl md:text-3xl lg:text-3xl">Supported Databases</p>
                 </div>
                 
                 <p className="text-md text-left text-gray-600 w-full sm:w-1/2">We currently support the <ExternalLink href="">nflfastR</ExternalLink> database. With upcoming support for NBA, association football, ice hockey, and baseball datasets.</p>

@@ -11,12 +11,12 @@ export default function AnimatedGradientText({
   return (
     <div
       className={cn(
-        "group relative mx-auto flex max-w-fit flex-row items-center justify-center rounded-2xl bg-white/40 px-4 py-1.5 text-sm font-medium shadow-[inset_0_-8px_10px_#8fdfff1f] backdrop-blur-sm transition-shadow duration-500 ease-out [--bg-size:300%] hover:shadow-[inset_0_-5px_10px_#8fdfff3f] dark:bg-black/40",
+        "group relative mx-auto flex max-w-fit flex-row items-center justify-center rounded-2xl bg-white/[0.8] px-4 py-1.5 text-sm font-medium shadow-sm backdrop-blur-sm transition-shadow duration-500 ease-out [--bg-size:300%] hover:shadow-md",
         className,
       )}
     >
       <div
-        className={`absolute inset-0 block h-full w-full animate-gradient bg-gradient-to-r border border-sky-300 from-[#0EA5E9]/[0.1] via-[purple]/[0.1] to-[blue]/[0.1] bg-[length:var(--bg-size)_100%] p-[1px] rounded-md [mask:linear-gradient(#fff_0_0)_content-box,linear-gradient(#fff_0_0)]`}
+        className={`absolute inset-0 block h-full w-full bg-gradient-to-r from-sky-950 to-sky-300 bg-clip-text text-transparent ${className}`}
       />
 
       {children}
