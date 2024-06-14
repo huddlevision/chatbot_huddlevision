@@ -40,7 +40,7 @@ const Circle = React.forwardRef<
     <div
       ref={ref}
       className={cn(
-        "z-10 flex h-12 w-12 items-center justify-center rounded-full border-2 bg-white p-3 shadow-[0_0_20px_-12px_rgba(0,0,0,0.8)]",
+        "z-10 flex h-12 w-12 items-center justify-center rounded-full border-2 border-sky-300/[0.2] bg-white p-3 shadow-[0_0_20px_-12px_rgba(2,132,199,0.8)]",
         className,
       )}
     >
@@ -125,10 +125,6 @@ export function ChatPanel({
   setInput,
   position
 }: ChatPanelProps) {
-  const [aiState] = useAIState();
-  const [messages, setMessages] = useUIState<typeof AI>();
-  const { submitUserMessage } = useActions();
-  const [shareDialogOpen, setShareDialogOpen] = React.useState(false);
 
   let cachedMessages = [
     {
@@ -152,7 +148,7 @@ export function ChatPanel({
     },
     {
       heading: "What is Christian McCaffrey's",
-      subheading: "EPA per rush?",
+      subheading: "EPA per rush in the postseason compared to regular season?",
       message: "What is Christian McCaffrey's EPA per rush?"
     },
     {
@@ -192,41 +188,19 @@ export function ChatPanel({
     },
     {
       heading: "What is Lamar's",
-      subheading: "CPOE when targeting OBJ?",
-      message: "What is Lamar's CPOE when targeting OBJ?"
+      subheading: "CPOE when targeting OBJ while on the run in 2023?",
+      message: "What is Lamar's CPOE when targeting OBJ while on the run in 2023?"
     }
   ];
 
   return (
     <div className="inset-x-0 w-full pb-12 m-auto h-full relative">
-      <div className={`w-11/12 m-auto ${position} px-4 sm:px-6 lg:px-8`}>
-        <PromptForm input={input} setInput={setInput} />
-      </div>
-      {messages.length === 0 ? (
-        <div className="mx-auto sm:px-4">
-          <div className="mb-4 gap-2 px-4 sm:px-0 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-11/12 m-auto">
+      <div className="mx-auto sm:px-4">
+          <div className="mb-4 gap-2 px-4 sm:px-0 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-11/12 m-auto">
             {cachedMessages.map((cached, index) => (
               <div
                 key={index}
-                className="mt-4 cursor-pointer rounded-lg border bg-white p-4 hover:bg-zinc-50"
-                onClick={async () => {
-                  setMessages(currentMessages => [
-                    ...currentMessages,
-                    {
-                      id: nanoid(),
-                      display: <UserMessage>{cached.message}</UserMessage>
-                    }
-                  ]);
-
-                  const responseMessage = await submitUserMessage(
-                    cached.message
-                  );
-
-                  setMessages(currentMessages => [
-                    ...currentMessages,
-                    responseMessage
-                  ]);
-                }}
+                className="mt-4 rounded-lg shadow-sm bg-white p-4"
               >
                 <h3 className="text-sm font-semibold">{cached.heading}</h3>
                 <p className="text-sm mt-1 bg-gradient-to-br 
@@ -238,8 +212,10 @@ export function ChatPanel({
           </div>
           <div className="w-11/12 mx-auto text-left mt-20 sm:mt-40">
             <div className="flex flex-row items-center">
-              <IconUser opacity="0.8" className="w-20 h-10 mr-3" />
-              <PrettyHeader content="What is Dak Prescott's EPA per dropback when trailing by more than one possession in the 4th quarter in 2023?" />
+              <IconUser className="text-sky-900 w-20 h-10 mr-3" />
+              <PrettyHeader className="text-xl sm:text-2xl md:text-3xl">
+              What is Dak Prescott&apos;s EPA per dropback when trailing by more than one possession in the 4th quarter in 2023?
+              </PrettyHeader>
             </div>  
               <div className="flex flex-col mb-5">
                 <div className="flex-col">
@@ -251,12 +227,12 @@ export function ChatPanel({
                         src={"https://static.www.nfl.com/image/private/f_auto,q_auto/league/knx0jxponzfkusnyvjkn"} 
                         alt={`${"Dak Prescott"}`} />
                     <div className="p-2 w-1/2 sm:w-3/4">
-                        <h3 className="text-xl font-bold text-gray-800 mb-2">{"Dak Prescott"}</h3>
-                        <p className="text-md text-gray-600 mb-1">Team: Dallas Cowboys</p>
-                        <p className="text-md text-gray-600 mb-1">Position: QB</p>
-                        <p className="text-md text-gray-600 mb-1">Height: {"6'2"}</p>
-                        <p className="text-md text-gray-600 mb-1">Weight: 229 lbs</p>
-                        <p className="text-md text-gray-600 mb-1">College: Mississippi State (2016, Round: 4 Pick: 135)</p>
+                        <h3 className="text-xl font-bold text-sky-950 mb-2">{"Dak Prescott"}</h3>
+                        <p className="text-md text-gray-500 mb-1">Team: Dallas Cowboys</p>
+                        <p className="text-md text-gray-500 mb-1">Position: QB</p>
+                        <p className="text-md text-gray-500 mb-1">Height: {"6'2"}</p>
+                        <p className="text-md text-gray-500 mb-1">Weight: 229 lbs</p>
+                        <p className="text-md text-gray-500 mb-1">College: Mississippi State (2016, Round: 4 Pick: 135)</p>
                     </div>
                 </div>
                 </div>
@@ -294,8 +270,10 @@ export function ChatPanel({
                 <div className="flex flex-col sm:flex-row items-center">
                 <div className="flex flex-col w-full sm:w-1/2">
                 <div className="flex flex-row items-center mb-5 w-full">
-                <IconOpenAI opacity="0.8" className="w-10 h-10" />
-                <PrettyHeader content="LLMs connected to Sports Databases" />
+                <IconOpenAI className="w-10 h-10 text-sky-900" />
+                <PrettyHeader className="text-xl sm:text-2xl md:text-3xl ml-3">
+                LLMs connected to sports databases
+                </PrettyHeader>
                 </div>
                 <p className="text-md text-left text-gray-600">We give LLMs access to sports databases, allowing you to query with natural language and get back advanced analytics. We currently support the OpenAI GPT-4 and GPT-4o as a model provider, with upcoming support for Anthropic&apos;s Claude, Llama-3, and more.</p>
                 </div>
@@ -312,17 +290,15 @@ export function ChatPanel({
                   <div className="flex-col p-5 border border-rounded w-full sm:w-1/3 rounded-md text-left  mb-3 sm:mb-0">
                   <div>
                   <div className="flex flex-row">
-                   <svg className="mb-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="black" fill="none">
+                   <svg className="mb-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#0c4a6e" fill="none">
                       <path d="M21.3006 6.05187C21.1484 5.22701 20.7411 4.45623 20.1372 3.85008C19.5309 3.24641 18.7599 2.83927 17.9348 2.68704C13.7379 1.98816 9.32857 3.26088 6.29895 6.28553C3.27 9.30951 1.9905 13.7155 2.68454 17.9122C2.83679 18.7371 3.24405 19.5079 3.84791 20.114C4.45425 20.7177 5.22527 21.1248 6.0504 21.2771C10.2213 22.0738 14.6996 20.7027 17.6917 17.6794C20.7496 14.6729 22.0291 10.2497 21.3006 6.05187Z" stroke="currentColor" stroke-width="1.5" />
                       <path d="M4 20L20 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                       <path d="M9 12L12 15M12 9L15 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                   </svg>
-                  <p className="ml-2 font-bold text-black">IN BETA TESTING</p>
+                  <p className="ml-2 font-bold text-sky-900">IN BETA TESTING</p>
                   </div>
                     <div className="mb-5">
-                    <ExternalLink href="">
-                      <span className="text-left text-xl">nflfastR</span>
-                    </ExternalLink>
+                    <span className="text-left text-xl">nflfastR</span>
                     </div>
                   </div>
                     <p className="text-gray-600 text-left">NFLfastR, as a database, offers a comprehensive and organized repository of NFL play-by-play data. It also includes roster data, historical game outcomes, and contract data, all accessible through our natural language interface.</p>
@@ -340,9 +316,7 @@ export function ChatPanel({
                   <p className="ml-2 font-bold text-gray-500">UPCOMING</p>
                   </div>
                     <div className="mb-5">
-                    <ExternalLink href="">
-                      <span className="text-left text-xl">NBA API</span>
-                    </ExternalLink>
+                    <span className="text-left text-xl">NBA API</span>
                     </div>
                   </div>
                     <p className="text-gray-600 text-left">The NBA API provides access to a vast database of NBA statistics, player and team performance metrics, game logs, and other basketball-related data.</p>
@@ -358,9 +332,7 @@ export function ChatPanel({
                   <p className="ml-2 font-bold text-gray-500">UPCOMING</p>
                   </div>
                     <div className="mb-5">
-                    <ExternalLink href="">
-                      <span className="text-left text-xl">NHL API</span>
-                    </ExternalLink>
+                    <span className="text-left text-xl">NHL API</span>
                     </div>
                   </div>
                     <p className="text-gray-600 text-left">The NHL API offers comprehensive access to a wide array of hockey data, including game statistics, player and team performance metrics, schedules, and play-by-play details.</p>
@@ -368,14 +340,16 @@ export function ChatPanel({
                 </div>
                 <div className="bg-gray-600/[0.5] w-full h-[1px] mb-5"></div>
                 <div className="flex flex-row mb-3 items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width={45} height={45} color={"#000"} fill={"none"} opacity={0.8}>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width={45} height={45} color={"#0c4a6e"} fill={"none"}>
                     <ellipse cx="12" cy="5" rx="8" ry="3" stroke="currentColor" strokeWidth="1.5" />
                     <path d="M20 12C20 13.6569 16.4183 15 12 15C7.58172 15 4 13.6569 4 12" stroke="currentColor" strokeWidth="1.5" />
                     <path d="M20 5V19C20 20.6569 16.4183 22 12 22C7.58172 22 4 20.6569 4 19V5" stroke="currentColor" strokeWidth="1.5" />
                     <path d="M8 8V10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
                     <path d="M8 15V17" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
                 </svg>
-                <PrettyHeader content={"Supported Databases"}/>
+                <PrettyHeader className="text-xl sm:text-2xl md:text-3xl ml-2">
+                Supported Data Sources
+                </PrettyHeader>
                 </div>
                 
                 <p className="text-md text-left text-gray-600 w-full sm:w-1/2">We currently support the <ExternalLink href="">nflfastR</ExternalLink> database. With upcoming support for NBA, association football, ice hockey, and baseball datasets.</p>
@@ -399,33 +373,6 @@ export function ChatPanel({
           
           </div>
         </div>
-      ) : null}
-      {messages?.length >= 2 ? (
-        <div className="flex justify-center space-x-2 p-4">
-          {id && title ? (
-            <>
-              <Button
-                variant="outline"
-                onClick={() => setShareDialogOpen(true)}
-              >
-                <IconShare className="mr-2" />
-                Share
-              </Button>
-              <ChatShareDialog
-                open={shareDialogOpen}
-                onOpenChange={setShareDialogOpen}
-                onCopy={() => setShareDialogOpen(false)}
-                shareChat={shareChat}
-                chat={{
-                  id,
-                  title,
-                  messages: aiState.messages
-                }}
-              />
-            </>
-          ) : null}
-        </div>
-      ) : null}
     </div>
   );
 }

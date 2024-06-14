@@ -8,6 +8,7 @@ import React, { useRef, forwardRef } from "react";
 
 import { AnimatedBeam } from "@/components/magicui/animated-beam";
 import { IconProps } from "@radix-ui/react-icons/dist/types";
+import { PrettyHeader } from "@/components/ui/pretty-header";
 
 const Circle = forwardRef<
   HTMLDivElement,
@@ -17,7 +18,7 @@ const Circle = forwardRef<
     <div
       ref={ref}
       className={cn(
-        "z-10 flex h-12 w-12 items-center justify-center rounded-full border-2 border-border bg-white p-3 shadow-[0_0_20px_-12px_rgba(0,0,0,0.8)]",
+        "z-10 flex h-12 w-12 items-center justify-center rounded-full border-2 border-sky-300/[0.2] bg-white p-3 shadow-[0_0_20px_-12px_rgba(2,132,199,0.8)]",
         className,
       )}
     >
@@ -451,7 +452,6 @@ export function Hero() {
             <div className="flex flex-col items-center gap-6 pb-8 text-center">
               <motion.h1
                 ref={fadeInRef}
-                className="text-balance bg-gradient-to-br from-black from-30% to-black/60 bg-clip-text py-3 sm:py-6 text-5xl md:text-6xl font-medium leading-none tracking-tighter text-transparent dark:from-white dark:to-white/40"
                 animate={fadeInInView ? "animate" : "initial"}
                 variants={fadeUpVariants}
                 initial={false}
@@ -462,7 +462,9 @@ export function Hero() {
                   type: "spring",
                 }}
               >
-                Streamline your sports content
+                <PrettyHeader className="text-4xl sm:text-5xl">
+                Streamline your sports content delivery
+                </PrettyHeader>
               </motion.h1>
 
               <motion.p
@@ -547,7 +549,9 @@ export function Hero() {
         <div className="flex flex-col-reverse md:flex-row mt-24 mx-auto px-10 align-items-center w-full md:w-3/4 pt-4 mb-24">
         <div className="w-full md:w-1/2 mr-24 border-right pt-10">
             <p className="text-lg text-zinc-500 text-left">Integration with all of your content</p>
-            <p className="text-xl text-zinc-950 font-semibold text-left">Your articles, podcasts, tweets, and more.</p>
+            <PrettyHeader className="text-xl">
+            Your podcasts, articles, tweets and more
+            </PrettyHeader>
             <p className="text-lg text-zinc-500 text-left mt-5">We integrate your content into our custom chatbots using a new technology called RAG, allowing your subscribers to access your content with ease. Privately hosted on your domain so only your subscribers can access. <br/><br/> We also ensure data privacy so only you and your subscribers can access paywalled content.</p>
         </div>
         <div className="w-full md:w-1/2">

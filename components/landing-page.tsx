@@ -51,7 +51,6 @@ export function LandingPage() {
             </a>
               <motion.h1
                 ref={fadeInRef}
-                className="text-balance bg-gradient-to-br from-sky-950 from-30% to-sky-300 bg-clip-text py-3 text-3xl font-medium leading-none tracking-tighter text-transparent dark:from-white dark:to-white/40 sm:text-3xl md:text-3xl lg:text-3xl"
                 animate={fadeInInView ? "animate" : "initial"}
                 variants={fadeUpVariants}
                 initial={false}
@@ -62,9 +61,14 @@ export function LandingPage() {
                   type: "spring",
                 }}
               >
-               <PrettyHeader content="An AI-powered natural language interface to sports stats" />
+                <PrettyHeader className="text-4xl mb-5 sm:mb-2 text-balance mt-5">
+                An AI-powered natural language interface to sports stats
+              </PrettyHeader>
                 
+              
               </motion.h1>
+
+              
               
               <motion.p
                 className="text-balance text-lg tracking-tight text-gray-400 md:text-lg"

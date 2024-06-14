@@ -16,12 +16,12 @@ export function PlayerCard({ player }: PlayerCardProps) {
                 src={player.image} 
                 alt={`${player.playerName}`} />
             <div className="p-2 w-1/2 sm:w-3/4">
-                <h3 className="text-xl font-bold text-gray-800 mb-2">{player.playerName}</h3>
-                <p className="text-md text-gray-600 mb-1">Team: {player.team}</p>
-                <p className="text-md text-gray-600 mb-1">Position: { player.position }</p>
-                <p className="text-md text-gray-600 mb-1">Height: {player.height}</p>
-                <p className="text-md text-gray-600 mb-1">Weight: {player.weight}</p>
-                <p className="text-md text-gray-600 mb-1">College: {player.college}</p>
+                <h3 className="text-xl font-bold text-sky-900 mb-2">{player.playerName}</h3>
+                <p className="text-md text-sky-900 mb-1">Team: {player.team}</p>
+                <p className="text-md text-sky-900 mb-1">Position: { player.position }</p>
+                <p className="text-md text-sky-900 mb-1">Height: {player.height}</p>
+                <p className="text-md text-sky-900 mb-1">Weight: {player.weight}</p>
+                <p className="text-md text-sky-900 mb-1">College: {player.college}</p>
             </div>
         </div>
     );

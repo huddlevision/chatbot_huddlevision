@@ -37,17 +37,17 @@ function Example() {
       >
         <PopoverPanel anchor="bottom" className="flex origin-top flex-col transition bg-white pt-10 pb-3 border rounded-md px-2 ml-3 divide-y divide-white/5">
           <a className="mb-3 block rounded-md px-3 py-4 transition hover:bg-zinc-100/[0.55]" href="/">
-            <p className="text-md text-sky-600">Huddlechat</p>
+            <p className="text-md text-sky-950">Huddlechat</p>
             <p className="text-sm text-muted-foreground">A natural language interface to sports stats.</p>
           </a>
           <a className="mb-3 block rounded-md px-3 py-4 transition hover:bg-zinc-100/[0.55]" target="_blank" href="https://huddlevision.ai">
             <ExternalLink href="https://huddlevision.ai">
-              <span className="text-md text-sky-600">Huddlevision</span>
+              <span className="text-md text-sky-950">Huddlevision</span>
             </ExternalLink>
             <p className="text-sm text-muted-foreground">Enterprise computer-vision solutions to high school football scouting.</p>
           </a>
           <a className="mb-3 block rounded-md px-3 py-4 transition hover:bg-zinc-100/[0.55]" href="/rag">
-            <p className="text-md text-sky-600">RAG Implementations</p>
+            <p className="text-md text-sky-950">RAG Implementations</p>
             <p className="text-sm text-muted-foreground">Custom RAG-based solutions for your sports business.</p>
           </a>
         </PopoverPanel>
@@ -69,9 +69,7 @@ async function UserOrLogin() {
         </>
       ) : (
         <>
-        <Button variant="link" asChild className="-ml-2 text-md text-zinc-900/[0.8]">
-            
-        </Button>
+        
         <Button variant="link" asChild className="-mr-1 text-zinc-900/[0.8]">
             <Link  href="/new">
               <span className="text-balance bg-gradient-to-r from-sky-950 from-10% to-sky-950/[0.8] bg-clip-text py-3 text-2xl font-medium leading-none tracking-tighter text-transparent sm:text-2xl md:text-2xl lg:text-2xl">huddlechat</span>
@@ -79,9 +77,15 @@ async function UserOrLogin() {
         </Button>
         <IconSeparator className="size-8 text-muted-foreground/[0.30]" />
         <Example/>
+        <IconSeparator className="size-8 text-muted-foreground/[0.30]" />
+        <Button variant="link" asChild className="-ml-2 text-md text-zinc-900/[0.8]">
+        <Link  href="/careers">
+              <span className="text-md">Jobs</span>
+          </Link>
+        </Button>
       </>
       )}
-      <div className="flex items-center">
+      {/* <div className="flex items-center">
         <IconSeparator className="size-8 text-muted-foreground/[0.30]" />
         {session?.user ? (
           <UserMenu user={session.user} />
@@ -90,7 +94,7 @@ async function UserOrLogin() {
             <Link href="/login">Beta Login</Link>
           </Button>
         )}
-      </div>
+      </div> */}
     </>
   )
 }

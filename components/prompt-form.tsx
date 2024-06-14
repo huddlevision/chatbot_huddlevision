@@ -21,11 +21,13 @@ import { useRouter } from 'next/navigation'
 export function PromptForm({
   input,
   setInput,
-  placeholder
+  placeholder,
+  disabled
 }: {
   input: string
   setInput: (value: string) => void
-  placeholder?: string
+  placeholder?: string,
+  disabled?: boolean
 }) {
   const router = useRouter()
   const { formRef, onKeyDown } = useEnterSubmit()
@@ -69,25 +71,37 @@ export function PromptForm({
       }}
     >
       <div className="relative flex my-6 max-h-60 w-full grow flex-col overflow-hidden rounded-md">
-      <Textarea
-        ref={inputRef}
-        tabIndex={0}
-        onKeyDown={onKeyDown}
-        placeholder={placeholder ? placeholder : 'Ask me anything about NFL stats.'}
-        className="min-h-[60px] w-full text-sky-900 border border-sky-300 rounded-md resize-none bg-white px-4 py-[1.3rem] focus-within:outline-none sm:text-md"
-        autoFocus
-        spellCheck={false}
-        autoComplete="off"
-        autoCorrect="off"
-        name="message"
-        rows={1}
-        value={input}
-        onChange={e => setInput(e.target.value)}
-      />
+        <Textarea
+          ref={inputRef}
+          tabIndex={0}
+          onKeyDown={onKeyDown}
+          placeholder={placeholder ? placeholder : 'Ask me anything about NFL stats.'}
+          className="
+          min-h-[60px] 
+          w-full 
+          text-sky-900 
+          border 
+          border-sky-300 
+          rounded-md 
+          resize-none 
+          bg-white 
+          px-4 py-[1.3rem] 
+          focus-within:outline-none 
+          sm:text-md"
+          autoFocus
+          spellCheck={false}
+          autoComplete="off"
+          autoCorrect="off"
+          name="message"
+          rows={1}
+          value={input}
+          onChange={e => setInput(e.target.value)}
+          disabled={disabled}
+        />
         <div className="absolute right-[8px] top-[15px] lg:right-[8px] md:right-[8px] sm:right-[40px]">
           <Tooltip>
             <TooltipTrigger asChild>
-              <Button type="submit" size="icon" disabled={input === ''}>
+              <Button type="submit" size="icon" disabled={input === '' || disabled}>
                 <IconArrowElbow />
                 <span className="sr-only">Ask me anything about NFL stats.</span>
               </Button>

@@ -106,7 +106,7 @@ export function Footer() {
             </a>
             <div className="max-w-sm">
               <div className="z-10 mt-4 flex w-full flex-col items-start text-left">
-                <h1 className="text-3xl font-bold lg:text-2xl">
+                <h1 className="text-3xl font-bold lg:text-2xl text-sky-900">
                   Join the beta today.
                 </h1>
                 <p className="mt-2">
@@ -119,7 +119,7 @@ export function Footer() {
                       size: "lg",
                       variant: "default",
                     }),
-                    "mt-4 w-full rounded-full px-6 text-sm font-semibold tracking-tighter transition-all ease-out hover:ring-2 hover:ring-neutral-800 hover:ring-offset-2 hover:ring-offset-current dark:hover:ring-neutral-50",
+                    "bg-sky-900 hover:bg-sky-800 mt-4 w-full rounded-full px-6 text-sm font-semibold tracking-tighter transition-all ease-out hover:ring-2 hover:ring-sky-800 hover:ring-offset-2 hover:ring-offset-current dark:hover:ring-neutral-50",
                   )}
                 >
                   Join the beta
@@ -131,7 +131,7 @@ export function Footer() {
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
             {footerNavs.map((nav) => (
               <div key={nav.label}>
-                <h2 className="mb-6 text-sm font-semibold uppercase text-neutral-900 dark:text-white">
+                <h2 className="mb-6 text-sm font-semibold uppercase text-sky-950 dark:text-white">
                   {nav.label}
                 </h2>
                 <ul className="grid gap-2">

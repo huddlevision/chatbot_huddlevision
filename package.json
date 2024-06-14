@@ -18,6 +18,7 @@
     "@fontsource-variable/space-grotesk": "^5.0.18",
     "@fontsource/orbitron": "^5.0.19",
     "@fontsource/press-start-2p": "^5.0.20",
+    "@formspree/react": "^2.5.1",
     "@headlessui/react": "^2.0.4",
     "@radix-ui/react-alert-dialog": "^1.0.5",
     "@radix-ui/react-dialog": "^1.0.5",
