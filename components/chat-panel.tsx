@@ -14,6 +14,7 @@ import { ExternalLink } from '@/components/external-link';
 import { IconOpenAI, IconUser } from '@/components/ui/icons';
 import { AnimatedBeam } from './magicui/animated-beam';
 import { cn } from "@/lib/utils";
+import { PrettyHeader } from '@/components/ui/pretty-header';
 
 export interface ChatPanelProps {
   id?: string;
@@ -236,12 +237,9 @@ export function ChatPanel({
             ))}
           </div>
           <div className="w-11/12 mx-auto text-left mt-20 sm:mt-40">
-            <div className="flex flex-row">
+            <div className="flex flex-row items-center">
               <IconUser opacity="0.8" className="w-20 h-10 mr-3" />
-              <p className="text-xl sm:text-3xl bg-gradient-to-br 
-              font-medium leading-none tracking-tighter text-transparent
-                from-black from-20% 
-                to-sky-300 bg-clip-text">{"What is Dak Prescott's EPA per dropback when trailing by more than one possession in the 4th quarter in 2023?"}</p>
+              <PrettyHeader content="What is Dak Prescott's EPA per dropback when trailing by more than one possession in the 4th quarter in 2023?" />
             </div>  
               <div className="flex flex-col mb-5">
                 <div className="flex-col">
@@ -297,10 +295,7 @@ export function ChatPanel({
                 <div className="flex flex-col w-full sm:w-1/2">
                 <div className="flex flex-row items-center mb-5 w-full">
                 <IconOpenAI opacity="0.8" className="w-10 h-10" />
-                <p className="ml-3 text-left text-balance 
-                bg-gradient-to-br 
-                from-black from-30% 
-                to-sky-300 bg-clip-text py-3 text-3xl font-medium leading-none tracking-tighter text-transparent sm:text-3xl md:text-3xl lg:text-3xl">LLMs connected to sports databases</p>
+                <PrettyHeader content="LLMs connected to Sports Databases" />
                 </div>
                 <p className="text-md text-left text-gray-600">We give LLMs access to sports databases, allowing you to query with natural language and get back advanced analytics. We currently support the OpenAI GPT-4 and GPT-4o as a model provider, with upcoming support for Anthropic&apos;s Claude, Llama-3, and more.</p>
                 </div>
@@ -380,10 +375,7 @@ export function ChatPanel({
                     <path d="M8 8V10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
                     <path d="M8 15V17" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
                 </svg>
-                <p className="ml-3 text-left text-balance 
-                bg-gradient-to-br 
-                from-black from-30% 
-                to-sky-300 bg-clip-text py-3 text-3xl font-medium leading-none tracking-tighter text-transparent sm:text-3xl md:text-3xl lg:text-3xl">Supported Databases</p>
+                <PrettyHeader content={"Supported Databases"}/>
                 </div>
                 
                 <p className="text-md text-left text-gray-600 w-full sm:w-1/2">We currently support the <ExternalLink href="">nflfastR</ExternalLink> database. With upcoming support for NBA, association football, ice hockey, and baseball datasets.</p>

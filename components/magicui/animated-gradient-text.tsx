@@ -11,7 +11,7 @@ export default function AnimatedGradientText({
   return (
     <div
       className={cn(
-        "group relative mx-auto flex max-w-fit flex-row items-center justify-center rounded-2xl bg-white/[0.8] px-4 py-1.5 text-sm font-medium shadow-sm backdrop-blur-sm transition-shadow duration-500 ease-out [--bg-size:300%] hover:shadow-md",
+        "group relative mx-auto flex max-w-fit flex-row items-center justify-center rounded-2xl bg-white/[0.8] px-4 py-1.5 text-sm font-medium shadow-md backdrop-blur-sm transition-shadow duration-500 ease-out [--bg-size:300%] hover:shadow-lg",
         className,
       )}
     >

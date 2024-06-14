@@ -46,7 +46,7 @@ export function SpinnerMessage({ prompt }: { prompt: string}) {
     { spinner }
     </div>
     <p className="text-zinc-500 font-md ml-3">
-      { "Querying the database..."}
+      {prompt ? `Querying the database for ${prompt}` : "Querying the database..."} 
     </p>
     </div>
   </>
@@ -155,12 +155,7 @@ async function submitUserMessage(content: string) {
         }),
         generate: async function* ({prompt, players=[], teams=[]}) {
           yield (
-            <div>
-            <p className="text-3xl">{prompt as string}</p>
-            <div className="mt-3">
-            <SpinnerMessage prompt={prompt} />
-            </div>
-            </div>
+            <SpinnerMessage prompt={prompt as string} />
           )
 
           const currentAIState = aiState.get()

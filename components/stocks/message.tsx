@@ -15,10 +15,7 @@ import { useStreamableText } from '@/lib/hooks/use-streamable-text'
 export function UserMessage({ children }: { children: React.ReactNode }) {
   return (
     <div className="group relative flex items-start">
-      <div className="flex size-[24px] shrink-0 select-none items-center justify-center rounded-md border bg-white text-black shadow-sm">
-        <IconUser />
-      </div>
-      <div className="text-md flex-1 space-y-1 overflow-hidden mb-1 ml-5 text-zinc-600">
+      <div className="text-2xl sm:text-3xl flex-1 space-y-1 overflow-hidden mb-1 text-zinc-900">
         {children}
       </div>
     </div>

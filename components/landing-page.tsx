@@ -12,6 +12,7 @@ import { motion, useInView } from "framer-motion";
 import { ChevronRight } from "lucide-react";
 import { useRef } from "react";
 import { useRouter } from "next/router";
+import { PrettyHeader } from './ui/pretty-header';
 
 export function LandingPage() {
   const fadeInRef = useRef(null);
@@ -61,7 +62,7 @@ export function LandingPage() {
                   type: "spring",
                 }}
               >
-                AI-powered natural language interface to sports stats.
+               <PrettyHeader content="An AI-powered natural language interface to sports stats" />
                 
               </motion.h1>
               

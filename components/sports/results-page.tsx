@@ -24,7 +24,6 @@ export function ResultsPage({
 }: ResultsPageProps) {
     return (
         <div>
-              <p className="text-xl sm:text-3xl">{prompt as string}</p>
               <div className="flex flex-col mb-5">
                 <div className="flex-col">
                 { nerResults.players.map((player: Player) => {
